@@ -1,0 +1,53 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace DunkiCode
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            int[] numeros = new int[10];
+            int[] pares = new int[10];
+            int[] impares = new int[10];
+
+            for (int p = 0; p < numeros.Length; p++)
+            {
+                Console.WriteLine("Digite um número maior do que zero: ");
+                numeros[p] = int.Parse(Console.ReadLine());
+            }
+            for (int p = 0; p < numeros.Length; p++)
+            {
+                if (numeros[p] % 2 == 0)
+                {
+                    pares[p] = numeros[p];
+                }
+                else
+                {
+                    impares[p] = numeros[p];
+                }
+            }
+
+            Array.Sort(numeros);
+            Array.Sort(pares);
+            Array.Sort(impares);
+
+            Console.WriteLine("Estes são os numeros que você digitou: ");
+            foreach (int numero in numeros)
+            {
+                Console.WriteLine(numero);
+            }
+            Console.WriteLine("\n\nEstes são os numeros pares: ");
+            foreach (int numero in pares)
+            {
+                if (numero != 0) Console.WriteLine(numero);
+            }
+            Console.WriteLine("\n\nEstes são os numeros impares: ");
+            foreach (int numero in impares)
+            {
+                if (numero != 0) Console.WriteLine(numero);
+            }
+        }
+    }
+}
